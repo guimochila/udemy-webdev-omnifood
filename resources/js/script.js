@@ -80,4 +80,23 @@ $(document).ready(function() {
         }
         
     });
+    
+    /* Maps */
+    
+    var map = new GMaps({
+      div: '.map',
+      lat: 28.1173563,
+      lng: -15.35,
+      zoom: 12
+    });
+    
+    map.addMarker({
+      lat: 28.1173563,
+      lng: -15.4746367,
+      title: 'Las Palmas',
+      infoWindow: {
+          content: '<p>Omnifood Lisbon office</p>'
+      }
+    });
+
 });
