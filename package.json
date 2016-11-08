@@ -1,0 +1,22 @@
+{
+  "name": "ominifoodweb",
+  "version": "1.0.0",
+  "description": "Website created from Udemy course - Now adding the Gulp to the project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guimochila/udemy-webdev-omnifood.git"
+  },
+  "author": "Guilherme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guimochila/udemy-webdev-omnifood/issues"
+  },
+  "homepage": "https://github.com/guimochila/udemy-webdev-omnifood#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
