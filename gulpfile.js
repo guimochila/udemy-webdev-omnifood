@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps') ;
 
 // Styles task
 // * Minify CSS files
@@ -16,9 +17,11 @@ gulp.task('styles', function () {
             console.log('Styles task error: \n' + err);
             this.emit('end');
         }))
+        .pipe(sourcemaps.init())
         .pipe(autoprefixer())
         .pipe(concat('styles.css'))
         .pipe(cleanCSS())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('public/resources/css'))
         .pipe(livereload());
 });
