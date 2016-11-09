@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/guimochila/udemy-webdev-omnifood#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0",
+    "static-server": "^2.0.3"
   }
 }

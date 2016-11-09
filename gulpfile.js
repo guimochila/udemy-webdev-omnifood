@@ -1,4 +1,5 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    uglify = require('gulp-uglify');
 
 // Styles task
 // * Minify CSS files
@@ -13,7 +14,9 @@ gulp.task('styles', function () {
 // * Minify javascript (compress)
 // * Compile script like Babel - Convert ES6 files to ES5.
 gulp.task('scripts', function () {
-    console.log('## Starting scripts task');
+    return gulp.src('src/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('resources/js'));
 });
 
 // Images task
