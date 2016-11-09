@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     
     /* Mobile navegation */
-    
+
     $('.js-mob-nav-icon').click(function () {
         var nav = $('.js-main-nav');
         var icon = $('.js-mob-nav-icon i');

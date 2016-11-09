@@ -1,11 +1,6 @@
 /*---------------------------------------*/
-
-
 /* Basic Setup  */
-
-
 /*---------------------------------------*/
-
 
 /*
  Orange Color: #e67e22
@@ -312,10 +307,10 @@ header {
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited {
     color: #555;
-    padding 16px 0;
+    padding: 16px 0;
 }
 
-.sticky .logo { display: none;}
+.sticky .logo { display: none; }
 .sticky .logo-black { display: block;}
 
 /*---------------------------------------*/
@@ -711,7 +706,7 @@ footer p {
 .js-wp-2,
 .js-wp-3 {
     opacity: 0;
-    animation-duration: 1s:
+    animation-duration: 1s;
 }
 
 .js-wp-4{
