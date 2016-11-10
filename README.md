@@ -1,9 +1,3 @@
-# Omnifood Website - Web development
-
-Website site created from a Udemy course for web development. 
-
-### Gulp training applied to the website project
-
 # Omnifood Website - Fictitious Website
 
 Omnifood website is a fictitious website created in the Udemy web development course I take. <brZ>
