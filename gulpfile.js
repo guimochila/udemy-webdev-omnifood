@@ -10,6 +10,14 @@ var gulp = require('gulp'),
 
 //Handlebars plugin
 var handlebars = require('gulp-compile-handlebars');
+
+//Image compression
+var imagemin = require('gulp-imagemin'),
+    imageminPngQuant = require('imagemin-pngquant'),
+    imageminJpegRecompress = require('imagemin-jpeg-recompress');
+
+//Image Path and extensions
+var IMAGES_PATH = 'src/img/*.{png,jpeg,jpg,svg,gif}';
     
 // Styles task
 // * Minify CSS files
@@ -51,7 +59,18 @@ gulp.task('scripts', function () {
 // Images task
 // Compress Images
 gulp.task('images', function () {
-    console.log('## Starting images task');
+    return gulp.src(IMAGES_PATH)
+    .pipe(imagemin(
+        [
+            imagemin.gifsicle(),
+            imagemin.jpegtran(),
+            imagemin.optipng(),
+            imagemin.svgo(),
+            imageminPngQuant(),
+            imageminJpegRecompress()
+        ]
+    ))
+    .pipe(gulp.dest('public/resources/img'));
 });
 
 //Template task
