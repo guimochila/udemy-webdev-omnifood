@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     plumber = require('gulp-plumber'),
     sourcemaps = require('gulp-sourcemaps'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    del = require('del');
 
 //Handlebars plugin
 var handlebars = require('gulp-compile-handlebars');
@@ -90,6 +91,26 @@ gulp.task('templates', function() {
         .pipe(livereload());
 });
 
+//Gulp copy vendors static files to public - Vendors folder
+gulp.task('copyVendors', function() {
+    return gulp.src(['src/vendors/**/*'], {
+        base: 'src'
+    }).pipe(gulp.dest('public'))
+});
+
+//Gulp copy favicons - favicons folder
+gulp.task('copyFavicons', function() {
+    return gulp.src(['src/favicons/**/*'], {
+        base: 'src'
+    }).pipe(gulp.dest('public/resources'))
+});
+
+//Clean task
+//Clear the public folder
+gulp.task('clean', function () {
+    del(['public/*']);
+});
+
 // Watch task
 // Watch all changes made in the files
 gulp.task('watch', ['default'], function () {
@@ -101,4 +122,4 @@ gulp.task('watch', ['default'], function () {
 });
 
 // Default task
-gulp.task('default', ['images', 'templates', 'styles', 'scripts'], function () {});
+gulp.task('default', ['clean', 'copyVendors', 'copyFavicons', 'images', 'templates', 'styles', 'scripts'], function () {});
