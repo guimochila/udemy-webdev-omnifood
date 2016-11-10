@@ -73,7 +73,7 @@ gulp.task('templates', function() {
 
 // Watch task
 // Watch all changes made in the files
-gulp.task('watch', function () {
+gulp.task('watch', ['default'], function () {
     require('./server.js');
     livereload.listen();
     gulp.watch('src/js/**/*.js', ['scripts']);
@@ -82,6 +82,4 @@ gulp.task('watch', function () {
 });
 
 // Default task
-gulp.task('default', function () {
-    console.log('## Starting defaul task');
-})
+gulp.task('default', ['images', 'templates', 'styles', 'scripts'], function () {});
